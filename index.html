@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Girlfriend Day</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to top left, #fce7f3, #fdf2f8);
+    }
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+    }
+    .typing {
+      border-right: .1em solid #f472b6;
+      white-space: nowrap;
+      overflow: hidden;
+      animation:
+        typing 4s steps(40, end),
+        blink .75s step-end infinite;
+      width: 0;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+  </style>
+</head>
+<body class="text-gray-800 font-sans flex flex-col items-center justify-center min-h-screen p-4 relative">
+
+  <!-- Heart rain -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      let heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <div class="bg-white p-8 rounded-2xl shadow-xl max-w-xl text-center z-10">
+    <h1 class="text-4xl font-bold text-pink-600 mb-4">Happy National Girlfriend Day ❤️</h1>
+    <p class="text-lg mb-2">August 1, 2025</p>
+    <p class="text-xl text-pink-500 font-semibold typing">You're the best thing that's ever happened to me 💕</p>
+    <<img src="IMG_7305.JPG" alt="Our photo" />>
+
+    <p class="text-lg mb-6">
+      To my dearest love Nikki Abarquez,<br>
+      I love you nikki, you're my sunshine on the gloomiest days, my reason to smile, and the one I always want beside me. Thank you for being your sweet, silly, beautiful self. I love you endlessly.
+    </p>
+
+    <p class="text-xl font-semibold text-pink-500">— Your Boyfriend, Ivaaaan 😘</p>
+
+    <div class="mt-8">
+      <a href="#more" class="text-pink-600 underline">Click here for a surprise 🎁</a>
+    </div>
+  </div>
+
+  <div id="more" class="mt-10 max-w-md text-center bg-pink-200 p-6 rounded-xl shadow-md hidden z-10">
+    <p class="text-lg mb-2">🎵 Our Song:</p>
+    <audio controls class="mx-auto">
+      <source src="your-song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div class="mt-6">
+      <p class="font-semibold mb-2">📸 Photo Gallery</p>
+      <div class="grid grid-cols-2 gap-4">
+        <img src="https://placekitten.com/200/200" class="rounded-lg shadow">
+        <img src="https://placekitten.com/201/200" class="rounded-lg shadow">
+        <img src="https://placekitten.com/200/201" class="rounded-lg shadow">
+        <img src="https://placekitten.com/199/200" class="rounded-lg shadow">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('a[href="#more"]').addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('more').classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>
